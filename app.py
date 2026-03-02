@@ -49,101 +49,180 @@ with st.expander("📋  Terms & Conditions & Privacy Policy — Please Read Befo
 ---
 ## Terms & Conditions
 
-### 1. Intended Use
-This tool is designed exclusively for building portfolio JSON files in a **desktop environment**.
-
-> *"This particular JSON creator you are seeing can be used as long as you know how to use it on
-> desktop. We have also included the Documentation in the Zip file of the Portfolio Template
-> you download."*
-
-By using this application you acknowledge that it is a local utility bundled with a portfolio
-template, and agree to these terms.
+**Last updated: March 2026**
 
 ---
 
-### 2. Third-Party Services — Cloudinary & ImageKit
-- This app offers **optional** integration with **Cloudinary** and **ImageKit** for image hosting.
-- By entering your API credentials you agree to the respective Terms of Service of those platforms:
-  **Cloudinary** (cloudinary.com/tos) and **ImageKit** (imagekit.io/terms).
-- You are solely responsible for all usage, charges, storage quotas, and activity on your
-  Cloudinary and ImageKit accounts arising from uploads made through this tool.
-- The developers of this tool are not affiliated with, endorsed by, or responsible for
-  Cloudinary or ImageKit.
+### 1. About This Tool
+
+This is a free, publicly accessible web tool that helps you build the `portfolio.json` file
+required by the Portfolio Template. You can fill in your details, optionally upload images to
+your own cloud storage, preview the generated JSON, and download it — all from your browser,
+without needing to install anything.
+
+> *"This particular JSON creator you are seeing can be used as long as you know how to use it
+> on desktop. We have also included the Documentation in the Zip file of the Portfolio
+> Template you download."*
+
+The **portfolio website** built from this JSON is designed and optimised for **desktop viewing**.
+By continuing to use this tool, you agree to these Terms & Conditions and the Privacy Policy
+below.
 
 ---
 
-### 3. Your Content & Data Responsibility
-- The generated JSON file contains only the information you have voluntarily entered.
-- You are responsible for the accuracy, copyright ownership, and appropriateness of all content
-  you submit, including images, links, and personal information.
-- Do not enter credentials or personal information belonging to others.
+### 2. Who Can Use This Tool
+
+This tool is intended for individuals building their own personal portfolio websites using the
+accompanying Portfolio Template. It is provided free of charge as a convenience for users of
+that template.
+
+You must not use this tool to:
+- Generate content on behalf of another person without their knowledge or consent.
+- Submit false, misleading, or harmful information.
+- Attempt to probe, stress-test, or interfere with the hosting infrastructure.
 
 ---
 
-### 4. Security — Clearing Your Fields *(Important)*
-Protecting your API keys is **your responsibility**. This application takes the following steps
-to help:
+### 3. Third-Party Services — Cloudinary & ImageKit
 
-| Action | When it happens |
+Providing API credentials for Cloudinary or ImageKit is **entirely optional**. If you choose to
+do so:
+
+- You are connecting this tool to **your own** Cloudinary or ImageKit account.
+- You must comply with the respective Terms of Service of
+  [Cloudinary](https://cloudinary.com/tos) and [ImageKit](https://imagekit.io/terms).
+- You are solely responsible for all API usage, storage consumption, bandwidth charges, and any
+  activity on your account that results from using this tool.
+- This tool and its developer are **not affiliated with, endorsed by, or responsible for**
+  Cloudinary or ImageKit in any capacity.
+
+---
+
+### 4. Your Content
+
+- All content you enter (name, bio, links, images, etc.) belongs to you.
+- You confirm that you have the right to use any images or links you submit.
+- The developer of this tool takes no ownership of and assumes no responsibility for the content
+  you generate or download.
+
+---
+
+### 5. Security & Clearing Your Fields *(Important)*
+
+This tool processes your form data and API credentials on the server that hosts this application
+(see Privacy Policy for details). To protect your credentials:
+
+| Safeguard | When it applies |
 |---|---|
-| **Auto-clear all fields** (including API keys) | Immediately after you click **Download JSON** |
-| **Manual clear** via "🗑️ Clear All Fields" button | Any time you choose |
-| **Session expiry** | When the browser tab is closed or the page is refreshed |
+| **Auto-clear** — all fields and keys wiped from server memory | Immediately after **Download JSON** is clicked |
+| **Manual clear** — "🗑️ Clear All Fields" button | Any time you choose |
+| **Session end** — all session data discarded | When you close the tab or your session times out |
 
-> ⚠️ **Please always click "Clear All Fields" or close the browser tab after downloading your
-> JSON — especially on shared or public computers.** Even though auto-clear runs after download,
-> taking this extra step ensures your credentials are never left on screen.
+> ⚠️ **Always click "Clear All Fields" or close this tab after downloading your JSON —
+> especially on a shared or public computer.** The auto-clear on download is a safety net,
+> not a substitute for mindful use.
 
 ---
 
-### 5. No Warranty
-This tool is provided **as-is**, without warranty of any kind, express or implied, including but
-not limited to warranties of merchantability, fitness for a particular purpose, or
-non-infringement. The developers make no guarantees regarding uptime, accuracy, or correctness
-of the generated output.
+### 6. No Warranty
+
+This tool is provided **as-is** and **free of charge**, with no guarantees of uptime,
+correctness, or fitness for any particular purpose. The developer reserves the right to modify
+or discontinue the tool at any time without prior notice.
 
 ---
 ---
 
 ## Privacy Policy
 
-### 1. No Data Collection
-This application does **not** collect, store, transmit, or log any personal data, API credentials,
-form inputs, or uploaded images to any server operated by this tool's developers.
-All data processing happens **locally in your browser session only**.
+**Last updated: March 2026**
 
 ---
 
-### 2. API Keys & Credentials
-- Your Cloudinary and ImageKit API keys are held **only** in your browser's session memory
-  for the duration you are actively using the tool.
-- Keys are used **exclusively** to authenticate upload requests sent directly from your browser
-  to Cloudinary's or ImageKit's own API endpoints.
-- Keys are **never** forwarded to, stored by, or visible to any server other than the
-  respective cloud service you have chosen.
-- Keys are automatically erased from session memory the moment you download your JSON
-  (auto-clear) or click "Clear All Fields".
+### 1. How This App Works (Technical Context)
+
+This is a **server-rendered web application** built with Streamlit and deployed on a cloud
+hosting platform. Unlike a purely static website, your inputs are processed by a Python
+server — this is how Streamlit apps function. Understanding this is important for how your
+data is handled.
 
 ---
 
-### 3. Image Uploads
-- Images you choose to upload are transmitted directly to **your own** Cloudinary or ImageKit
-  account using your credentials.
-- This tool has no visibility into, and exercises no control over, your cloud storage, its
-  contents, or the URLs generated.
+### 2. What Data Is Processed
+
+When you use this tool, the following data temporarily exists in **server-side session memory**:
+
+| Data | Purpose | Persisted? |
+|---|---|---|
+| Name, bio, email, location, links, skills, etc. | Building your JSON | **No** — session only |
+| Project & publication details | Building your JSON | **No** — session only |
+| Cloudinary / ImageKit API keys *(if provided)* | Authenticating image uploads | **No** — session only |
+| Uploaded image files *(if provided)* | Forwarding to your cloud account | **No** — not stored |
+
+"Session only" means the data lives in the server's memory **only for the duration of your
+active session**. It is never written to a database, file, log, or any form of persistent
+storage.
 
 ---
 
-### 4. Session Data & Persistence
-- All form data — name, about, projects, publications, social links, etc. — lives **only** in
-  your browser's active session memory.
-- No cookies, local storage, databases, or any form of persistent storage are used.
-- All data is permanently lost when you close the tab or refresh the page.
+### 3. API Keys & Credentials
+
+- If you enter Cloudinary or ImageKit credentials, they are stored in **server-side session
+  memory** for the duration of your session and used solely to make authenticated upload
+  requests to those services on your behalf.
+- Credentials are **never** logged, saved to disk, sent to any analytics service, or shared
+  with any party other than the cloud service you selected.
+- Credentials are permanently erased from server memory the moment you click **Download JSON**
+  (auto-clear) or **Clear All Fields**.
 
 ---
 
-### 5. Questions & Support
-For further guidance, refer to the **Documentation** included in the Portfolio Template ZIP file.
+### 4. Image Uploads
+
+- When you upload an image, it is temporarily held in session memory and then forwarded to
+  **your own** Cloudinary or ImageKit account using the credentials you provided.
+- The developer of this tool has no access to your cloud storage and cannot view, modify,
+  or delete content in your account.
+
+---
+
+### 5. No Tracking, No Cookies, No Analytics
+
+- This tool does **not** use cookies, tracking pixels, or third-party analytics scripts.
+- No personal data is transmitted to any advertising or analytics platform.
+- No user accounts or profiles are created.
+
+---
+
+### 6. Data Retention
+
+All session data — including any API keys you entered — is discarded:
+- Automatically, the moment you click **Download JSON**.
+- When you click **Clear All Fields**.
+- When your browser session ends (tab closed, session timeout).
+
+There is no data to delete or request because nothing is ever stored beyond your active session.
+
+---
+
+### 7. Children's Privacy
+
+This tool is not directed at children under the age of 13 and does not knowingly process data
+from minors.
+
+---
+
+### 8. Changes to This Policy
+
+If these terms or this policy are updated, the "Last updated" date above will change.
+Continued use of the tool after any update constitutes acceptance of the revised terms.
+
+---
+
+### 9. Questions & Support
+
+For guidance on using this tool or the Portfolio Template, refer to the **Documentation**
+included in the Portfolio Template ZIP file.
 
 ---
     """)
