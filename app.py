@@ -55,80 +55,105 @@ with st.expander("📋  Terms & Conditions & Privacy Policy — Please Read Befo
 
 ### 1. About This Tool
 
-This is a free, publicly accessible web tool that helps you build the `portfolio.json` file
-required by the Portfolio Template. You can fill in your details, optionally upload images to
-your own cloud storage, preview the generated JSON, and download it — all from your browser,
-without needing to install anything.
+This is a **free, publicly accessible web tool** that helps you build the `portfolio.json` file
+required by the Portfolio Template. You can fill in your details here in the browser, optionally
+upload images to your own cloud storage, preview the generated JSON, and download it — without
+installing anything.
 
 > *"This particular JSON creator you are seeing can be used as long as you know how to use it
 > on desktop. We have also included the Documentation in the Zip file of the Portfolio
 > Template you download."*
 
+This tool is available in **two ways**:
+
+| Mode | How to access |
+|---|---|
+| **Online (this page)** | Use it directly in your browser — no setup required |
+| **Local copy** | A copy of this app is included inside the Portfolio Template ZIP file. Run it on your own machine using Python + Streamlit if you prefer to work offline or want full control over your environment. Refer to the Documentation in the ZIP for setup instructions. |
+
 The **portfolio website** built from this JSON is designed and optimised for **desktop viewing**.
-By continuing to use this tool, you agree to these Terms & Conditions and the Privacy Policy
-below.
+By continuing to use this tool (in either mode), you agree to these Terms & Conditions and the
+Privacy Policy below.
 
 ---
 
-### 2. Who Can Use This Tool
+### 2. Bring Your Own Key (BYOK) Model
+
+This application operates on a **strict Bring Your Own Key (BYOK)** model.
+
+- This tool has **no built-in API keys** and no pre-configured cloud storage of any kind.
+- Image uploading functionality is **entirely optional**. If you choose not to use it, you can
+  still paste direct image URLs into the URL fields and the tool works completely without any
+  credentials.
+- If you **do** want to upload images through this tool, you must supply your **own** API keys
+  from either Cloudinary or ImageKit — services you have independently registered for.
+- At no point does the developer of this tool provide, share, or subsidise API access for users.
+- You are solely responsible for obtaining, safeguarding, and managing your own API credentials.
+
+This model exists to ensure complete transparency: **your images go to your account, under your
+control, using your keys — this tool is only the bridge.**
+
+---
+
+### 3. Who Can Use This Tool
 
 This tool is intended for individuals building their own personal portfolio websites using the
-accompanying Portfolio Template. It is provided free of charge as a convenience for users of
-that template.
+accompanying Portfolio Template. It is provided free of charge as a convenience for those users.
 
 You must not use this tool to:
-- Generate content on behalf of another person without their knowledge or consent.
+- Generate content on behalf of another person without their explicit knowledge and consent.
 - Submit false, misleading, or harmful information.
-- Attempt to probe, stress-test, or interfere with the hosting infrastructure.
+- Attempt to probe, reverse-engineer, stress-test, or interfere with the hosting infrastructure.
+- Use another person's API credentials without their authorisation.
 
 ---
 
-### 3. Third-Party Services — Cloudinary & ImageKit
+### 4. Third-Party Services — Cloudinary & ImageKit
 
-Providing API credentials for Cloudinary or ImageKit is **entirely optional**. If you choose to
-do so:
+If you choose to use the optional image upload feature:
 
-- You are connecting this tool to **your own** Cloudinary or ImageKit account.
-- You must comply with the respective Terms of Service of
+- You are connecting this tool to **your own** Cloudinary or ImageKit account, governed
+  entirely by your agreement with those platforms.
+- You must comply with the Terms of Service of
   [Cloudinary](https://cloudinary.com/tos) and [ImageKit](https://imagekit.io/terms).
-- You are solely responsible for all API usage, storage consumption, bandwidth charges, and any
-  activity on your account that results from using this tool.
-- This tool and its developer are **not affiliated with, endorsed by, or responsible for**
-  Cloudinary or ImageKit in any capacity.
+- You are solely responsible for all API usage, storage consumption, bandwidth charges, and
+  any activity on your account that results from uploads made through this tool.
+- This tool and its developer are **not affiliated with, endorsed by, sponsored by, or
+  responsible for** Cloudinary or ImageKit in any capacity.
 
 ---
 
-### 4. Your Content
+### 5. Your Content
 
-- All content you enter (name, bio, links, images, etc.) belongs to you.
-- You confirm that you have the right to use any images or links you submit.
-- The developer of this tool takes no ownership of and assumes no responsibility for the content
-  you generate or download.
+- All content you enter (name, bio, links, images, etc.) belongs entirely to you.
+- You confirm that you own or have the right to use any images or materials you submit.
+- The developer of this tool takes no ownership of and bears no responsibility for the
+  content you generate or download.
 
 ---
 
-### 5. Security & Clearing Your Fields *(Important)*
+### 6. Security & Clearing Your Fields *(Important)*
 
-This tool processes your form data and API credentials on the server that hosts this application
-(see Privacy Policy for details). To protect your credentials:
+This tool processes your form data and any API credentials you enter on the server hosting
+this application (see Privacy Policy §2 for technical details). To protect your credentials:
 
 | Safeguard | When it applies |
 |---|---|
 | **Auto-clear** — all fields and keys wiped from server memory | Immediately after **Download JSON** is clicked |
 | **Manual clear** — "🗑️ Clear All Fields" button | Any time you choose |
-| **Session end** — all session data discarded | When you close the tab or your session times out |
+| **Session end** — all session data discarded by the server | When you close the tab or the session times out |
 
 > ⚠️ **Always click "Clear All Fields" or close this tab after downloading your JSON —
 > especially on a shared or public computer.** The auto-clear on download is a safety net,
-> not a substitute for mindful use.
+> not a substitute for mindful use of your own credentials.
 
 ---
 
-### 6. No Warranty
+### 7. No Warranty
 
 This tool is provided **as-is** and **free of charge**, with no guarantees of uptime,
-correctness, or fitness for any particular purpose. The developer reserves the right to modify
-or discontinue the tool at any time without prior notice.
+correctness, or fitness for any particular purpose. The developer reserves the right to modify,
+update, or discontinue the tool at any time without prior notice.
 
 ---
 ---
@@ -141,10 +166,13 @@ or discontinue the tool at any time without prior notice.
 
 ### 1. How This App Works (Technical Context)
 
-This is a **server-rendered web application** built with Streamlit and deployed on a cloud
-hosting platform. Unlike a purely static website, your inputs are processed by a Python
-server — this is how Streamlit apps function. Understanding this is important for how your
-data is handled.
+This is a **server-rendered web application** built with Streamlit. Unlike a static website,
+your inputs are processed by a Python server — this is how all Streamlit apps function.
+Understanding this is important context for the sections below.
+
+If you are using the **local copy** from the Portfolio Template ZIP, the "server" is your own
+machine — nothing leaves your computer unless you trigger an image upload to Cloudinary or
+ImageKit.
 
 ---
 
@@ -152,26 +180,26 @@ data is handled.
 
 When you use this tool, the following data temporarily exists in **server-side session memory**:
 
-| Data | Purpose | Persisted? |
+| Data | Purpose | Persisted to disk or database? |
 |---|---|---|
 | Name, bio, email, location, links, skills, etc. | Building your JSON | **No** — session only |
 | Project & publication details | Building your JSON | **No** — session only |
-| Cloudinary / ImageKit API keys *(if provided)* | Authenticating image uploads | **No** — session only |
-| Uploaded image files *(if provided)* | Forwarding to your cloud account | **No** — not stored |
+| Cloudinary / ImageKit API keys *(if provided)* | Authenticating image uploads (BYOK) | **No** — session only |
+| Uploaded image files *(if provided)* | Forwarding to your own cloud account | **No** — not stored |
 
-"Session only" means the data lives in the server's memory **only for the duration of your
-active session**. It is never written to a database, file, log, or any form of persistent
-storage.
+"Session only" means the data lives in server memory **only while your session is active**. It
+is never written to a database, log file, or any form of persistent storage by this tool.
 
 ---
 
-### 3. API Keys & Credentials
+### 3. API Keys & Credentials (BYOK)
 
-- If you enter Cloudinary or ImageKit credentials, they are stored in **server-side session
-  memory** for the duration of your session and used solely to make authenticated upload
-  requests to those services on your behalf.
-- Credentials are **never** logged, saved to disk, sent to any analytics service, or shared
-  with any party other than the cloud service you selected.
+This tool follows a strict BYOK model — it has no keys of its own.
+
+- If you provide Cloudinary or ImageKit credentials, they are stored in **server-side session
+  memory** solely to authenticate upload requests to those services on your behalf.
+- Credentials are **never** logged, written to disk, sent to any analytics service, or
+  shared with any party other than the specific cloud service you selected.
 - Credentials are permanently erased from server memory the moment you click **Download JSON**
   (auto-clear) or **Clear All Fields**.
 
@@ -179,10 +207,10 @@ storage.
 
 ### 4. Image Uploads
 
-- When you upload an image, it is temporarily held in session memory and then forwarded to
+- Uploaded images are temporarily held in session memory and then forwarded directly to
   **your own** Cloudinary or ImageKit account using the credentials you provided.
 - The developer of this tool has no access to your cloud storage and cannot view, modify,
-  or delete content in your account.
+  or delete content within your account.
 
 ---
 
@@ -190,7 +218,7 @@ storage.
 
 - This tool does **not** use cookies, tracking pixels, or third-party analytics scripts.
 - No personal data is transmitted to any advertising or analytics platform.
-- No user accounts or profiles are created.
+- No user accounts or profiles are created at any point.
 
 ---
 
@@ -199,23 +227,25 @@ storage.
 All session data — including any API keys you entered — is discarded:
 - Automatically, the moment you click **Download JSON**.
 - When you click **Clear All Fields**.
-- When your browser session ends (tab closed, session timeout).
+- When your session ends (tab closed or session timeout).
 
-There is no data to delete or request because nothing is ever stored beyond your active session.
+There is no data to delete or request on your behalf because nothing is ever stored beyond
+your active session.
 
 ---
 
 ### 7. Children's Privacy
 
-This tool is not directed at children under the age of 13 and does not knowingly process data
-from minors.
+This tool is not directed at children under the age of 13 and does not knowingly process
+personal data from minors.
 
 ---
 
 ### 8. Changes to This Policy
 
-If these terms or this policy are updated, the "Last updated" date above will change.
-Continued use of the tool after any update constitutes acceptance of the revised terms.
+If these Terms or this Privacy Policy are updated, the "Last updated" date above will reflect
+that change. Continued use of the tool after any update constitutes acceptance of the revised
+terms.
 
 ---
 
