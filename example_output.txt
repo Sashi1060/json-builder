@@ -1,0 +1,62 @@
+{
+    "name": "Trilochan Sashank",
+    "headline": "Senior Software Engineer",
+    "profile_pic": "https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg",
+    "about": "Experienced software engineer specializing in full-stack development and AI integration.",
+    "email": "trilochan@example.com",
+    "location": "Hyderabad, India",
+    "skills": [
+        "Python",
+        "Streamlit",
+        "React",
+        "Node.js",
+        "Docker",
+        "Kubernetes"
+    ],
+    "projects": [
+        {
+            "title": "Streamlit Portfolio Generator",
+            "description": "A tool to convert form data into a structured JSON for portfolios.",
+            "tech_stack": [
+                "Python",
+                "Streamlit",
+                "Cloudinary"
+            ],
+            "github_link": "https://github.com/trilochan/portfolio-gen",
+            "live_link": "https://portfolio-gen.streamlit.app",
+            "thumbnail": "https://ik.imagekit.io/demo/img/logo.png"
+        },
+        {
+            "title": "E-Commerce Dashboard",
+            "description": "Analytics dashboard for tracking sales and user engagement.",
+            "tech_stack": [
+                "React",
+                "D3.js",
+                "Firebase"
+            ],
+            "github_link": "https://github.com/trilochan/dashboard",
+            "live_link": "https://dash.example.com",
+            "thumbnail": "https://res.cloudinary.com/demo/image/upload/dashboard.jpg"
+        }
+    ],
+    "publications": [
+        {
+            "title": "Modern Web Architectures",
+            "journal": "IEEE Software",
+            "year": "2024",
+            "link": "https://ieee.org/software/modern-web"
+        },
+        {
+            "title": "AI in Local Development Environments",
+            "journal": "International Journal of AI Tools",
+            "year": "2025",
+            "link": "https://ijait.org/ai-dev"
+        }
+    ],
+    "social_media": {
+        "linkedin": "https://linkedin.com/in/trilochan",
+        "github": "https://github.com/trilochan",
+        "twitter": "https://x.com/trilochan",
+        "website": "https://trilochan.dev"
+    }
+}

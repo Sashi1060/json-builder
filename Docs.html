@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Documentation</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --code-bg: #1e293b;
+            --code-text: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-sub {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+            color: var(--text-main);
+        }
+
+        ol,
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #db2777;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        .note {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important-note {
+            background-color: #fffbeb;
+            border-left: 4px solid #fbbf24;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Portfolio System Documentation</h1>
+            <p class="header-sub">The complete guide to generating, setting up, and customizing your portfolio.</p>
+        </header>
+
+        <section id="welcome" style="background-color: #f0fdf4; border-color: #86efac;">
+            <h2 style="color: #166534; border-bottom-color: #bbf7d0;">👋 Welcome!</h2>
+            <p>Thank you for downloading the Portfolio System! If you are reading this, you have successfully extracted
+                the ZIP archive.</p>
+            <p><strong>Inside this folder, you will find:</strong></p>
+            <ul>
+                <li><strong>Templates Folder:</strong> Contains beautiful, ready-to-deploy static HTML/CSS portfolio
+                    templates.</li>
+                <li><strong>Json_creator Folder:</strong> Contains a Python-based generator app to securely compile your
+                    portfolio data into a single file.</li>
+                <li><strong>Docs.html (This file):</strong> Your complete guide to using the system.</li>
+            </ul>
+            <p>Follow the steps below to generate your custom data and apply it to the template of your choice!</p>
+        </section>
+
+        <section id="json-creator">
+            <h2>1. How to Setup & Run the JSON Creator App</h2>
+            <p>The JSON Creator is a Streamlit application used to securely upload images and generate the
+                <code>data.json</code> file required by the templates.
+            </p>
+
+            <h3>Prerequisites</h3>
+            <ul>
+                <li><strong>Python 3.8+</strong> must be installed on your system.</li>
+                <li>An active internet connection to download dependencies.</li>
+            </ul>
+
+            <h3>Installation Steps (Using Virtual Environment)</h3>
+            <p>It is highly recommended to use a virtual environment to manage dependencies locally. Follow the steps
+                below based on your Operating System:</p>
+
+            <ol>
+                <li>Open your terminal / command prompt and navigate to the <strong>Json creator</strong> folder (where
+                    <code>app.py</code> is located).
+                </li>
+                <li><strong>Create a Virtual Environment:</strong>
+                    <ul>
+                        <li><strong>Windows:</strong>
+                            <pre><code>python -m venv venv</code></pre>
+                        </li>
+                        <li><strong>macOS / Linux:</strong>
+                            <pre><code>python3 -m venv venv</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Activate the Virtual Environment:</strong>
+                    <ul>
+                        <li><strong>Windows (PowerShell - Default):</strong>
+                            <pre><code>venv\Scripts\Activate.ps1</code></pre>
+                        </li>
+                        <li><strong>Windows (Command Prompt):</strong>
+                            <pre><code>venv\Scripts\activate.bat</code></pre>
+                        </li>
+                        <li><strong>macOS / Linux:</strong>
+                            <pre><code>source venv/bin/activate</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Install Required Libraries:</strong> Once the virtual environment is activated, run:
+                    <pre><code>pip install streamlit cloudinary imagekitio</code></pre>
+                </li>
+            </ol>
+
+            <h3>Running the App</h3>
+            <p>Make sure your virtual environment is activated, then run the following command in the same directory to
+                start the application:</p>
+            <ul>
+                <li><strong>Windows:</strong>
+                    <pre><code>streamlit run app.py</code></pre>
+                </li>
+                <li><strong>macOS / Linux:</strong>
+                    <pre><code>python3 -m streamlit run app.py</code></pre>
+                </li>
+            </ul>
+            <p>This will automatically open the generator form in your default web browser (usually at
+                <code>http://localhost:8501</code>).
+            </p>
+        </section>
+
+        <section id="generate-json">
+            <h2>2. How to Generate your Portfolio JSON</h2>
+            <p>Once the generator is running in your browser, follow these steps to create your data file:</p>
+            <ol>
+                <li><strong>Configure Image Hosting & URLs:</strong>
+                    <ul>
+                        <li><strong>Using Image URLs:</strong> If your assets (profile picture, project thumbnails) are
+                            already present in a cloud service (e.g., Imgur, GitHub, AWS S3, or any public link), you
+                            can simply paste the direct URL into the respective fields. You can select "None" for Image
+                            Service.</li>
+                        <li><strong>Uploading Images:</strong> If you want to upload local images directly through the
+                            app, choose whether you want to use <strong>Cloudinary</strong> or <strong>ImageKit</strong>
+                            to host your uploaded images, and enter your respective API keys. The app will upload them
+                            to your cloud and automatically generate the URLs for the JSON file.</li>
+                    </ul>
+                </li>
+                <li><strong>Fill in the Form:</strong> Enter your Name, Headline, About description, Skills, and Contact
+                    Email/Location.</li>
+                <li><strong>Add Projects & Publications:</strong> Expand the respective sections to add projects (with
+                    Live/GitHub links and thumbnails) and any research publications you have.</li>
+                <li><strong>Add Social Links:</strong> Fill in the URLs for your LinkedIn, GitHub, Twitter, and Personal
+                    Website.</li>
+                <li><strong>Generate & Download:</strong> Scroll to the very bottom, view the generated code, and click
+                    the <strong>Download JSON</strong> button. This will download a file named
+                    <code>portfolio.json</code>.
+                </li>
+            </ol>
+        </section>
+
+        <section id="use-app">
+            <h2>3. How to Use & Apply Data to the Templates</h2>
+            <p>Once you have your generated JSON file, applying it to your portfolio template is extremely simple and
+                requires no backend server!</p>
+
+            <ol>
+                <li>Open the <strong>Templates</strong> folder and select the template you wish to use.</li>
+                <li>Open that template's <code>index.html</code> file in any modern web browser.</li>
+                <li>In the navigation bar of the portfolio, click the <strong><code>{ }</code></strong> (Settings) icon.
+                </li>
+                <li>You will be prompted for an admin PIN. The default PIN is <strong><code>0000</code></strong>.</li>
+                <li>Once unlocked, open your downloaded <code>portfolio.json</code> file in a text editor (like
+                    Notepad), copy all its contents, and paste it into the secure terminal interface in the browser.
+                </li>
+                <li>Click <strong>Apply ↵</strong>. Your portfolio will immediately update with your new information!
+                </li>
+            </ol>
+            <div class="note">
+                <strong>Note:</strong> The data you paste into the browser is securely saved locally in your browser's
+                <code>localStorage</code>. Anyone who visits your live website will see the <code>data.json</code> file
+                you ultimately deploy alongside your website. To permanently deploy your changes, simply copy your
+                downloaded <code>portfolio.json</code> file into the template folder and rename it to
+                <code>data.json</code>, replacing the default file.
+            </div>
+        </section>
+
+        <section id="change-password">
+            <h2>4. How to Change the Settings Password (PIN)</h2>
+            <p>The templates are strictly front-end applications. Because there is no backend server, the PIN is used
+                primarily as a UI barrier to prevent casual browsing or accidental changes to your LocalStorage.</p>
+            <p>To change the default <code>0000</code> PIN to your own secure 4-digit PIN:</p>
+
+            <ol>
+                <li>Open the folder of the Template you are using.</li>
+                <li>Open the <code>script.js</code> file in any code editor (like VS Code, Notepad++, etc).</li>
+                <li>Near the very top of the file (usually around Line 10), locate the following variable:
+                    <pre><code>const ADMIN_PIN = '0000';</code></pre>
+                </li>
+                <li>Change <code>0000</code> to your desired 4-digit combination. For example:
+                    <pre><code>const ADMIN_PIN = '1234';</code></pre>
+                </li>
+                <li>Save the <code>script.js</code> file. Your new password is now active!</li>
+            </ol>
+        </section>
+
+        <div class="important-note">
+            <strong>Note:</strong> This portfolio is built for convenience and quick deployment. The downloaded user can
+            modify it as they please.
+        </div>
+
+        <footer style="text-align: center; margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem;">
+            Generated Documentation — System One
+        </footer>
+    </div>
+</body>
+
+</html>
